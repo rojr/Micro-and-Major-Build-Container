@@ -9,4 +9,9 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN ./aws/install
 
+RUN     curl "https://aliyuncli.alicdn.com/aliyun-cli-linux-3.0.69-amd64.tgz" -o "aliyun.tgz" && \
+        yum install -y tar && \
+        tar xzvf aliyun.tgz && \
+        mv ./aliyun /usr/local/bin/
+
 CMD /bin/bash
